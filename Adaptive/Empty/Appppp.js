@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { Headline } from 'react-native-paper';
 
+
+
 export default function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +23,7 @@ export default function App() {
       <View>
         <View>
           <Headline style={{fontSize:30, fontWeight: 'bold', }}> Welcome Back</Headline>
-          <Headline style={{fontSize:15, textAlign:"center", borderRadius:25, }}>Sign to continue</Headline>
+          <Headline style={{fontSize:15, textAlign:"center", borderRadius:25, }}>Login to continue</Headline>
 
            </View>
       </View>
@@ -53,9 +55,13 @@ export default function App() {
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Login?</Text>
+      <View>
+      <Text>
+        Don't have account?
+      </Text>
+      </View>
+      <TouchableOpacity style={{height: 50, borderRadius: 5, alignItems: 'center', justifyContent: 'flex-end',}}>
+        <Text style={styles.forgot_button}>Create a new Account</Text>
       </TouchableOpacity>
     </View>
   );
@@ -68,6 +74,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  loginText: {
+    color: '#dcdcdc',
+  }, 
  
   image: {
     marginBottom: 30,
@@ -77,7 +87,7 @@ const styles = StyleSheet.create({
   },
  
   inputView: {
-    backgroundColor: "#2e8b57",
+    backgroundColor: "#dcdcdc",
     borderRadius: 10,
     width: "90%",
     height: 50,
@@ -96,6 +106,7 @@ const styles = StyleSheet.create({
     height: 20,
     marginBottom: 20,
     alignItems:"flex-end",
+    color:'green'
   },
   TouchableOpacity : {
     height: 20,
@@ -113,4 +124,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#2e8b57",
   },
 });
-export default App;
